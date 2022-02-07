@@ -1,0 +1,14 @@
+.regresiva{
+    margin:0 auto;
+    width:25%;
+    text-align:center;
+}
+
+button{
+    width:200px;
+    height:50px;
+    background: #202020;
+    color: #f0f0f0;
+    border:none;
+    border-radius: .5rem;
+}
