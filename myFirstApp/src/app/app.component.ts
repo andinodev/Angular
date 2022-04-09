@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Tarea } from './models/tarea.model';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,29 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
+  campoTexto: string
+
+  tasks: Tarea[] = []
+  
+  activeSemaforo:boolean = true
+
+  constructor(){
+    this.campoTexto = '';
+  }
+  
+  onAlertClicked($event:any){
+    console.log('Atención... '+$event)
+  }
+
+  onSemaforo(){
+    this.activeSemaforo = !this.activeSemaforo
+  }
+  onTaskCreated($event:any){
+    this.tasks.push($event)
+    
+    console.log(this.tasks)
+  }
+
   title = 'myFirstApp';
 }

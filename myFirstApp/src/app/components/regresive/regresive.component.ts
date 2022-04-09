@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output,EventEmitter, Input } from '@angular/core';
 
 @Component({
   selector: 'app-regresive',
@@ -7,24 +7,32 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegresiveComponent implements OnInit {
 
-  numbers: number
   isRunning: boolean
+  realNumber:number
+  @Input() numbers: string
+  @Output() finishRegresive: EventEmitter<number>
+
   constructor() {
-    this.numbers = 10
     this.isRunning = false
+    this.numbers = '0'
+    this.realNumber = 0
+    this.finishRegresive = new EventEmitter()
   }
   ngOnInit(): void {
+    this.realNumber = Number(this.numbers)
   }
 
   startRegresive() {
+    console.log(this.realNumber)
     if (!this.isRunning) {
       let interval = setInterval(() => {
-        if (this.numbers < 1){
+        if (this.realNumber < 1){
+          this.finishRegresive.emit(this.realNumber)
           this.isRunning = false
           clearInterval(interval)
         }else{
           this.isRunning = true
-          this.numbers--
+          this.realNumber--
         }
       }, 1000)
     }

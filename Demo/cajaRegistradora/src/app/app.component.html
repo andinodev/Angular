@@ -1,0 +1,10 @@
+<div class="row" style="width:1200px;margin:0 auto;">
+  <div class="content">
+    <app-productos (productSelected)="addProduct($event)"></app-productos>
+  </div>
+  <div class="sidebar">
+    <h3>Carrito</h3>
+    Total: {{total}}
+    <app-carrito [carrito]="carrito"></app-carrito>
+  </div>
+</div>

@@ -1,0 +1,19 @@
+.rojo{
+    background-color: rgb(185, 18, 18);
+}
+
+.verde{
+    background-color: rgb(15, 165, 95);
+}
+
+.row{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width:100%;
+    justify-content: center;
+}
+
+.col{
+    width:100px;
+}

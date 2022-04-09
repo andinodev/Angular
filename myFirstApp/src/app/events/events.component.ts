@@ -11,7 +11,10 @@ export class EventsComponent implements OnInit {
   constructor() {
     this.result = ''
   }
-
+  
+  endRegresive($event:any){
+    console.log('ha finalizado el cronómetro con el número',$event)
+  }
 
   ngOnInit(): void {
   }

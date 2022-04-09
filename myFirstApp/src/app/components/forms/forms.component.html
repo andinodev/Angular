@@ -1,0 +1,11 @@
+
+    <h3>lista TO-DO</h3>
+    <div>
+        <label>Título</label>
+        <input type="text" [(ngModel)]="newTask.titulo"/>
+    </div>
+    <div>
+        <label>Descripción</label>
+        <textarea [(ngModel)]="newTask.desc"></textarea>
+    </div>
+    <button (click)="onSubmit()">Subir</button>

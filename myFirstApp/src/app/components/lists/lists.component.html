@@ -1,0 +1,10 @@
+<h3>Lista de tareas:</h3>
+
+<div class="row" >
+  <div class="col" *ngFor="let task of tasks; let i = index" [ngClass]="{verde:(task.finished),rojo:(!task.finished)}">
+      <h4>{{task.titulo}}</h4>
+      <p>{{task.desc}}</p>
+    <button *ngIf="!task.finished" (click)="task.onFinish()">Completar</button>
+    <button (click)="remove(i)">Eliminar</button>
+  </div>
+</div>
