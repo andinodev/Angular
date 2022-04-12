@@ -1,0 +1,53 @@
+<div>
+  <button (click)="onAddToList()">Agregar trabajadores</button>
+
+  <button (click)="onClickActivos()">revisar trabajadores activos</button>
+  <table>
+    <tr>
+      <th>Nombre</th>
+      <th>Apellidos</th>
+      <th>Edad</th>
+      <th>Activo</th>
+    </tr>
+    <tr *ngFor="let persona of personas">
+      <td>{{persona.nombre}}</td>
+      <td>{{persona.apellidos}}</td>
+      <td>{{persona.edad}}</td>
+      <td>{{(persona.activo)?'Activo':'Baneado'}}</td>
+    </tr>
+  </table>
+  <h3>Semaforo {{ activeSemaforo ? "activado" : "desactivado" }}</h3>
+  <!--
+    <app-semaforo *ngIf="activeSemaforo;then mainBlock;else elseBlock"></app-semaforo>
+    <ng-template #mainBlock>
+      <p>Chupapi?</p>
+  </ng-template>
+    <ng-template #elseBlock>
+        <p>Muñaño?</p>
+    </ng-template>
+  
+  -->
+  <app-semaforo *ngIf="activeSemaforo"></app-semaforo>
+  <p *ngIf="!activeSemaforo">Chupapi?</p>
+  <button (click)="onSemaforo()">
+    {{ activeSemaforo ? "Ocultar" : "Mostrar" }}
+  </button>
+</div>
+
+<app-switch></app-switch>
+<app-bucles></app-bucles>
+
+<div class="row">
+  <div class="col">
+    <app-forms (taskCreated)="onTaskCreated($event)"></app-forms>
+  </div>
+  <div class="col">
+    <app-lists [tasks]="tasks"></app-lists>
+  </div>
+</div>
+<app-alerts
+  txt="Se ha detectado 1 amenaza"
+  (alertClicked)="onAlertClicked($event)"
+></app-alerts>
+<app-padre></app-padre>
+<input type="text" [(ngModel)]="campoTexto" />

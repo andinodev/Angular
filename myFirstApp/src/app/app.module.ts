@@ -16,6 +16,12 @@ import { ListsComponent } from './components/lists/lists.component';
 import { SemaforoComponent } from './semaforo/semaforo.component';
 import { BuclesComponent } from './components/bucles/bucles.component';
 import { SwitchComponent } from './components/switch/switch.component';
+import { ExperienciaComponent } from './components/experiencia/experiencia.component';
+import { ProyectosComponent } from './components/proyectos/proyectos.component';
+import { CvComponent } from './components/cv/cv.component';
+import { DetalleEmpleadoComponent } from './components/detalle-empleado/detalle-empleado.component';
+import { AppRoutingModule } from './app-routing.module';
+import { WelcomeComponent } from './pages/welcome/welcome.component';
 
 @NgModule({
   declarations: [
@@ -32,11 +38,17 @@ import { SwitchComponent } from './components/switch/switch.component';
     ListsComponent,
     SemaforoComponent,
     BuclesComponent,
-    SwitchComponent
+    SwitchComponent,
+    ExperienciaComponent,
+    ProyectosComponent,
+    CvComponent,
+    DetalleEmpleadoComponent,
+    WelcomeComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

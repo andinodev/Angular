@@ -18,6 +18,9 @@ export class AppComponent {
     this.campoTexto = '';
   }
   
+  ngOnInit(){
+    //console.log(this.personasService.getAll(true))
+  }
   onAlertClicked($event:any){
     console.log('Atención... '+$event)
   }

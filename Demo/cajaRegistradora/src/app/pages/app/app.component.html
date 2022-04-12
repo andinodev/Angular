@@ -1,0 +1,8 @@
+<div nz-row>
+    <div nz-col nzSpan="16">
+      <app-productos (productSelected)="addProduct($event)"></app-productos>
+    </div>
+    <div nz-col nzSpan="8">
+      <app-carrito [carrito]="carrito"></app-carrito>
+    </div>
+  </div>

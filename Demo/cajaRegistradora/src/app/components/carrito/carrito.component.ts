@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Carrito } from 'src/app/models/carrito/carrito.model';
-import { Producto } from 'src/app/models/producto/producto.model';
+import { Andinodev } from 'src/app/models/ext/andinodev';
 
 @Component({
   selector: 'app-carrito',
@@ -10,6 +10,7 @@ import { Producto } from 'src/app/models/producto/producto.model';
 export class CarritoComponent implements OnInit {
 
   @Input() carrito: Carrito[] = []
+  tools:Andinodev = new Andinodev()
 
   constructor() { }
 
@@ -18,5 +19,13 @@ export class CarritoComponent implements OnInit {
 
   isChange(){
     console.log('change')
+  }
+
+  getTotal(){
+    let total = 0
+    this.carrito.forEach((element)=>{
+      total += element.total
+    })
+    return total
   }
 }

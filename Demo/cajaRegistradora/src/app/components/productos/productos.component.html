@@ -3,7 +3,7 @@
     <div class="product" *ngFor="let product of food;let i = index" (click)="onClick(i,false)">
         <h3>{{product.name}}</h3>
         <img style="width:150px;height:150px;" src="{{product.img}}">
-        <p class="btn">{{moneyFormat(product.price)}}</p>
+        <p class="btn">{{tools.moneyFormat(product.price)}}</p>
     </div>
 </div>
 <hr>
@@ -12,6 +12,6 @@
     <div class="product" *ngFor="let product of drinks;let i = index" (click)="onClick(i,true)">
         <h3>{{product.name}}</h3>
         <img class="product-img" src="{{product.img}}">
-        <p class="btn">{{moneyFormat(product.price)}}</p>
+        <p class="btn">{{tools.moneyFormat(product.price)}}</p>
     </div>
 </div>

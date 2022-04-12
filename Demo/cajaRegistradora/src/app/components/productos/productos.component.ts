@@ -1,4 +1,5 @@
 import { Component,EventEmitter, OnInit, Output } from '@angular/core';
+import { Andinodev } from 'src/app/models/ext/andinodev';
 import { Producto } from 'src/app/models/producto/producto.model';
 
 @Component({
@@ -12,6 +13,8 @@ export class ProductosComponent implements OnInit {
   bd: any[]
   @Output() productSelected: EventEmitter<Producto> = new EventEmitter()
 
+  tools: Andinodev = new Andinodev()
+  
   money: Intl.NumberFormat = new Intl.NumberFormat('es-CL',
   { style:'currency', currency: 'CLP' });
 
@@ -49,7 +52,4 @@ export class ProductosComponent implements OnInit {
     }
   }
 
-  moneyFormat(money:number,format:string = 'CLP'):string{
-    return this.money.format(money)
-  }
 }
