@@ -1,0 +1,26 @@
+<form #formularioRegistro="ngForm" (ngSubmit)="onSubmit(formularioRegistro.value)">
+  <div class="form-group">
+    <label for="nombre">Nombre</label>
+    <input type="text" id="nombre" name="nombre" class="form-control" ngModel/>
+  </div>
+
+  <div class="form-group">
+    <label for="ap">Apellidos</label>
+    <input type="text" id="ap" name="ap" class="form-control" ngModel/>
+  </div>
+
+  <div class="form-group">
+    <label for="edad">Edad</label>
+    <input type="number" id="edad" name="edad" class="form-control" ngModel/>
+  </div>
+
+  <div class="form-group">
+    <label for="dir">Dirección</label>
+    <input type="text" id="dir" name="dir" class="form-control" ngModel/>
+  </div>
+  <div class="d-grid gap-2 mx-auto mt-4">
+    <input type="submit" value="Enviar" class="btn btn-primary w-100" />
+  </div>
+</form>
+
+{{formularioRegistro.value | json}}

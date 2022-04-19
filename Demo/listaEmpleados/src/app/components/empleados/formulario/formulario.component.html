@@ -1,0 +1,67 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <label for="">Nombre</label>
+        <input type="text" name="nombre" class="form-control" formControlName="nombre">
+        <div class="badge rounded-pill bg-danger" *ngIf="isRequired('nombre')">
+            Este campo es requerido
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="">Apellidos</label>
+        <input type="text" name="apellidos" class="form-control" formControlName="apellidos">
+        <div class="badge rounded-pill bg-danger" *ngIf="isRequired('apellidos')">
+            Este campo es requerido
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="">Email</label>
+        <input type="email" name="email" class="form-control" formControlName="email">
+        <div class="badge rounded-pill bg-danger" *ngIf="isRequired('email')">
+            Este campo es requerido
+        </div>
+        <div class="badge rounded-pill bg-danger" *ngIf="isPatternError('email')">
+            Este campo no tiene un formato valido
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="">Contraseña</label>
+        <input type="text" name="password" class="form-control" formControlName="password">
+        <div class="badge rounded-pill bg-danger" *ngIf="isRequired('password')">
+            Este campo es requerido
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="">Edad</label>
+        <input type="text" name="edad" class="form-control" formControlName="edad">
+        <div class="badge rounded-pill bg-danger" *ngIf="isRequired('edad')">
+            Este campo es requerido
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="">Departamento</label>
+        <select formControlName="departamentoId" class="form-select">
+            <option value="" disabled>Seleccionar una opción</option>
+            <option value="1">Ciencias</option>
+            <option value="2">Seguridad</option>
+            <option value="3">IT</option>
+        </select>
+        <div class="badge rounded-pill bg-danger" *ngIf="isRequired('departamentoId')">
+            Este campo es requerido
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="">img de perfil</label>
+        <input type="text" name="nombre" class="form-control" formControlName="img">
+        <div class="badge rounded-pill bg-danger" *ngIf="isRequired('img')">
+            Este campo es requerido
+        </div>
+    </div>
+
+    <input type="submit" value="Subir empleado" class="btn btn-primary"  [disabled]="!form.valid">
+</form>

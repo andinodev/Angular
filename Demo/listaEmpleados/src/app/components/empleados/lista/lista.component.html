@@ -1,0 +1,14 @@
+<h3>Lista de empleados</h3>
+
+<div class="row w-100 g-4">
+    <div class="col bg-success " *ngFor="let empleado of empleados">
+        <h4>{{empleado.nombre}} {{empleado.apellidos}}</h4>
+        <img src="{{empleado.img}}">
+        <ul>
+            <li>Edad: {{empleado.edad}}</li>
+            <li>Email: {{empleado.email}}</li>
+            <li>Depto: {{empleado.departamentoId}}</li>
+
+        </ul>
+    </div>
+</div>

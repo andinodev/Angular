@@ -1,0 +1,80 @@
+<form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+    <h3>Formulario</h3>
+    <div class="form-grup">
+        <label>Nombre*</label>
+        <input type="text" class="form-control" formControlName="nombre" />
+        <div class="badge rounded-pill bg-danger" *ngIf="
+        formulario.controls['nombre'].errors?.['required'] &&
+        formulario.controls['nombre'].touched
+        ">
+            El campo es requerido
+        </div>
+
+        <div class="badge rounded-pill bg-danger" *ngIf="
+        formulario.controls['nombre'].errors?.['minlength'] &&
+        formulario.controls['nombre'].touched">
+            El campo debe tener por lo menos {{formulario.controls['nombre'].errors?.['minlength']['requiredLength']}}
+            caracteres
+        </div>
+    </div>
+    <div class="form-grup">
+        <label>Apellidos*</label>
+        <input type="text" class="form-control" formControlName="apellidos" />
+        <div class="badge rounded-pill bg-danger" *ngIf="
+        formulario.controls['apellidos'].errors?.['required'] &&
+        formulario.controls['apellidos'].touched
+        ">
+            El campo es requerido
+        </div>
+
+        <div class="badge rounded-pill bg-danger" *ngIf="
+        formulario.controls['apellidos'].errors?.['maxlength'] &&
+        formulario.controls['apellidos'].touched">
+            El campo debe tener hasta {{formulario.controls['apellidos'].errors?.['maxlength']['requiredLength']}}
+            caracteres
+        </div>
+    </div>
+    <div class="form-grup">
+        <label>Edad*</label>
+        <input type="number" class="form-control" formControlName="edad" />
+
+        <div class="badge rounded-pill bg-danger"
+            *ngIf="formulario.controls['edad'].errors?.['edadvalidator'] && formulario.controls['edad'].touched">
+
+            El campo edad debe estar entre {{formulario.controls['edad'].errors?.['edadvalidator']['min']}} y {{formulario.controls['edad'].errors?.['edadvalidator']['max']}} años
+        </div>
+    </div>
+    <div class="form-grup">
+        <label>Email</label>
+        <input type="email" class="form-control" formControlName="email" />
+        <div class="badge rounded-pill bg-danger"
+            *ngIf="formulario.controls['email'].errors && formulario.controls['email'].touched">
+
+            Debe ingresar un correo valido
+           
+        </div>
+    </div>
+    <div class="form-grup">
+        <label>Rut</label>
+        <input type="text" class="form-control" formControlName="rut" />
+        <div class="badge rounded-pill bg-danger"
+            *ngIf="formulario.controls['rut'].errors?.['error'] && formulario.controls['rut'].touched">
+            
+            {{formulario.controls['rut'].errors?.['error']}}
+
+        </div>
+    </div>
+    <div class="form-grup">
+        <label>Contraseña</label>
+        <input type="text" class="form-control" formControlName="password" />
+    </div>
+    <div class="form-grup">
+        <label>Repetir Contraseña</label>
+        <input type="text" class="form-control" formControlName="rpassword" />
+    </div>
+    <input type="submit" [disabled]="!formulario.valid" value="Crear cuenta" class="mt-4 btn btn-success w-100" />
+</form>
+
+<div>
+    <p>{{ formulario.valid ? "" : "Debe rellenar todos los campos" }}</p>
+</div>

@@ -1,0 +1,32 @@
+<div class="container overflow-hidden">
+  <h2>Hall of posts</h2>
+  <button (click)="onClickPost()">Petición POST</button>
+  <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+    <div class="form-control">
+      <label for="">Titulo</label>
+      <input type="text" formControlName="title" id="">
+    </div>
+    <div class="form-control">
+      <label for="">Descripción</label>
+      <textarea formControlName="body" id="">
+
+      </textarea>
+    </div>
+    <div class="form-control">
+      <label for="">Id</label>
+      <input type="text" formControlName="userId" id="">
+    </div>
+    <input type="submit" value="Subir">
+  </form>
+  <div class="row g-3">
+    <div class="col-3" *ngFor="let post of posts" (click)="onClick(post.id)">
+      <div class="card">
+        <div class="card-body ">
+          <h5 class="card-title">{{post.title}}</h5>
+          <p class="lead">{{post.body}}</p>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</div>

@@ -1,0 +1,12 @@
+<p>escritores works!</p>
+<select name="selectCountry" (change)="loadEscritores(seleccionado)" [(ngModel)]="seleccionado">
+    <option value="">Todos</option>
+    <option *ngFor="let country of paises" value="{{country}}">{{country}}</option>
+</select>
+<div class="row">
+    <div class="escritor" *ngFor="let escritor of escritores" routerLink="./{{escritor.id}}">
+        {{escritor.nombre}} {{escritor.apellidos}}
+        <img src="{{escritor.imagen}}" />
+        {{escritor.pais}}
+    </div>
+</div>

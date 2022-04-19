@@ -1,0 +1,33 @@
+<p>Precio: ${{precio | currency:'CLP':''}}</p>
+
+<p>N° Decimal: {{numero | number:'1.2-2'}}</p>
+
+<p>Hoy es {{fechaActual | date:'short'}}</p>
+<p>Hoy es {{fechaActual | date:'medium'}}</p>
+<p>La hora de hoy es {{fechaActual | date:'shortTime'}}</p>
+<p>Hoy es {{fechaActual | date:'dd-MM-yyyy'}}</p>
+<p>Hoy es {{fechaActual | date:'dd LLLL-yyyy'}}</p>
+<p>Tu n° de la suerte es: {{randomNum | number:'1.2-5'}} - {{randomNum | percent:'1.1-2'}}</p>
+
+<p>{{estudiante | json}}</p>
+
+<p>{{muchotexto | lowercase}}</p>
+<p>{{muchotexto | uppercase}}</p>
+<p>{{muchotexto | titlecase}}</p>
+
+<ul>
+  <li *ngFor="let animal of animales | slice:min:max">
+    {{animal}}
+  </li>
+</ul>
+
+<input type="range" min="0" [max]="animales.length" step="1" [(ngModel)]="min">
+<input type="range"  min="0" [max]="animales.length" step="1" [(ngModel)]="max">
+
+<p>{{promPosts | async}}</p>
+
+<ul>
+  <li *ngFor="let post of promPosts | async">
+    {{post.title}}
+  </li>
+</ul>

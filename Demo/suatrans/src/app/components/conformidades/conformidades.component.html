@@ -1,0 +1,105 @@
+<div class="container pt-5" style="background:#fff">
+    <div class="row g-5">
+        <div class="col-8 ">
+            <form [formGroup]="form">
+
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group mb-3">
+                            <label for="" class="form-label">Asignado a: (*)</label>
+                            <select class="form-select" formControlName="contrato">
+                                <option value="" disabled selected>Selecciona una opción</option>
+                                <option value="1">Contrato A</option>
+                            </select>
+                        </div>
+        
+                        <div class="form-group mb-3">
+                            <label for="" class="form-label">Fecha de asignación: (*)</label>
+                            <input type="date" class="form-control" formControlName="fechaAsignacion" id="">
+                        </div>
+        
+                        <div class="form-group mb-3">
+                            <label for="" class="form-label">Sistema afectado: (*)</label>
+                            <select class="form-select" formControlName="sistema">
+                                <option value="" disabled selected>Selecciona una opción</option>
+                                <option value="Calidad">Calidad</option>
+                                <option value="Seguridad">Seguridad</option>
+                                <option value="Medio ambiente">Medio ambiente</option>
+                            </select>
+                        </div>
+        
+                        <div class="form-group mb-3">
+                            <label for="" class="form-label">Norma: (*)</label>
+                            <select class="form-select" formControlName="norma">
+                                <option value="" disabled selected>Selecciona una opción</option>
+                                <option value="ISO 9001">ISO 9001</option>
+                                <option value="ISO 14001">ISO 14001</option>
+                                <option value="ISO 23001">ISO 23001</option>
+                                <option value="ISO 39001">ISO 39001</option>
+                            </select>
+                        </div>
+        
+                        <div class="form-group mb-3">
+                            <label for="" class="form-label">Ingrese el Módulo de la norma: (*)</label>
+                            <input type="text" class="form-control" formControlName="moduloNorma">
+                        </div>
+        
+                    </div>
+                    <div class="col">
+                        <div class="form-group mb-3">
+                            <label for="" class="form-label">Ingrese el punto del módulo de norma: (*)</label>
+                            <input type="text" class="form-control" formControlName="puntoNorma">
+                        </div>
+        
+                        <div class="form-group mb-3">
+                            <label for="" class="form-label">No conformidad levantada por: (*)</label>
+                            <select class="form-select" formControlName="creador">
+                                <option value="" disabled selected>Selecciona una opción</option>
+                                <option value="Auditoría Externa">Auditoría Externa</option>
+                                <option value="Auditoría Interna">Auditoría Interna</option>
+                                <option value="Cliente">Cliente</option>
+                                <option value="Inspección">Inspección</option>
+                                <option value="Fiscalización">Fiscalización</option>
+                                <option value="Cliente">Cliente</option>
+                                <option value=">OIRS o Comunicaciones">OIRS o Comunicaciones</option>
+                            </select>
+                        </div>
+        
+                        <div class="form-group mb-3">
+                            <label for="" class="form-label">Tipo de no conformidad: (*)</label>
+                            <select class="form-select" formControlName="tipo">
+                                <option value="" disabled selected>Selecciona una opción</option>
+                                <option value="Menor">Menor</option>
+                                <option value="Mayor">Mayor</option>
+                            </select>
+                        </div>
+        
+                        <div class="form-group mb-3">
+                            <label for="" class="form-label">Estado: (*)</label>
+                            <select class="form-select" formControlName="estado">
+                                <option value="" disabled selected>Selecciona una opción</option>
+                                <option value="0">Pendiente</option>
+                                <option value="1">En gestión</option>
+                                <option value="2">Cerrado</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label for="" class="form-label">Describa la no conformidad: (*)</label>
+                    <textarea class="form-control" formControlName="descripcion"></textarea>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label for="" class="form-label">Fecha propuesta de cierre: (*)</label>
+                    <textarea class="form-control" formControlName="fechaCierre"></textarea>
+                </div>
+
+            </form>
+        </div>
+        <div class="col-4">
+            <h3>Respuestas 1 de 12</h3>
+        </div>
+    </div>
+</div>
